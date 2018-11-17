@@ -323,72 +323,72 @@ INSERT INTO SeasonalStock ( seasonalStockID ,stockQuantity, seasonalResourcesNO)
 
 commit;
 
-grant select on dt2283group_m.Customer to idobos;
-grant select on dt2283group_m.Menu to idobos;
-grant select on dt2283group_m.Brochures to idobos;
-grant select on dt2283group_m.Event to idobos;
-grant select on dt2283group_m.Booking to idobos;
-grant select on dt2283group_m.Payments to idobos;
-grant select on dt2283group_m.Ingredients to idobos;
-grant select on dt2283group_m.MenuItemOrder to idobos;
-grant select on dt2283group_m.ResourcesType to idobos;
-grant select on dt2283group_m.ResourceStock to idobos;
-grant select on dt2283group_m.SeasonalResources to idobos;
-grant select on dt2283group_m.SeasonalStock to idobos;
+grant select on dt2283m13.Customer to idobos;
+grant select on dt2283m13.Menu to idobos;
+grant select on dt2283m13.Brochures to idobos;
+grant select on dt2283m13.Event to idobos;
+grant select on dt2283m13.Booking to idobos;
+grant select on dt2283m13.Payments to idobos;
+grant select on dt2283m13.Ingredients to idobos;
+grant select on dt2283m13.MenuItemOrder to idobos;
+grant select on dt2283m13.ResourcesType to idobos;
+grant select on dt2283m13.ResourceStock to idobos;
+grant select on dt2283m13.SeasonalResources to idobos;
+grant select on dt2283m13.SeasonalStock to idobos;
 
-grant select on dt2283group_m.Customer to idobos;
-grant select on dt2283group_m.Menu to idobos;
-grant select on dt2283group_m.Brochures to idobos;
-grant select on dt2283group_m.Event to idobos;
-grant select on dt2283group_m.Booking to idobos;
-grant select on dt2283group_m.Payments to idobos;
-grant select on dt2283group_m.Ingredients to idobos;
-grant select on dt2283group_m.MenuItemOrder to idobos;
-grant select on dt2283group_m.ResourcesType to idobos;
-grant select on dt2283group_m.ResourceStock to idobos;
-grant select on dt2283group_m.SeasonalResources to idobos;
-grant select on dt2283group_m.SeasonalStock to idobos;
+grant select on dt2283m13.Customer to idobos;
+grant select on dt2283m13.Menu to idobos;
+grant select on dt2283m13.Brochures to idobos;
+grant select on dt2283m13.Event to idobos;
+grant select on dt2283m13.Booking to idobos;
+grant select on dt2283m13.Payments to idobos;
+grant select on dt2283m13.Ingredients to idobos;
+grant select on dt2283m13.MenuItemOrder to idobos;
+grant select on dt2283m13.ResourcesType to idobos;
+grant select on dt2283m13.ResourceStock to idobos;
+grant select on dt2283m13.SeasonalResources to idobos;
+grant select on dt2283m13.SeasonalStock to idobos;
 
-grant select on dt2283group_m.Customer to falgahtani;
-grant select on dt2283group_m.Menu to falgahtani;
-grant select on dt2283group_m.Brochures to falgahtani;
-grant select on dt2283group_m.Event to falgahtani;
-grant select on dt2283group_m.Booking to falgahtani;
-grant select on dt2283group_m.Payments to falgahtani;
-grant select on dt2283group_m.Ingredients to falgahtani;
-grant select on dt2283group_m.MenuItemOrder to falgahtani;
-grant select on dt2283group_m.ResourcesType to falgahtani;
-grant select on dt2283group_m.ResourceStock to falgahtani;
-grant select on dt2283group_m.SeasonalResources to falgahtani;
-grant select on dt2283group_m.SeasonalStock to falgahtani;
+grant select on dt2283m13.Customer to falgahtani;
+grant select on dt2283m13.Menu to falgahtani;
+grant select on dt2283m13.Brochures to falgahtani;
+grant select on dt2283m13.Event to falgahtani;
+grant select on dt2283m13.Booking to falgahtani;
+grant select on dt2283m13.Payments to falgahtani;
+grant select on dt2283m13.Ingredients to falgahtani;
+grant select on dt2283m13.MenuItemOrder to falgahtani;
+grant select on dt2283m13.ResourcesType to falgahtani;
+grant select on dt2283m13.ResourceStock to falgahtani;
+grant select on dt2283m13.SeasonalResources to falgahtani;
+grant select on dt2283m13.SeasonalStock to falgahtani;
 
-grant select on dt2283group_m.Customer to aaljabri;
-grant select on dt2283group_m.Menu to aaljabri;
-grant select on dt2283group_m.Brochures to aaljabri;
-grant select on dt2283group_m.Event to aaljabri;
-grant select on dt2283group_m.Booking to aaljabri;
-grant select on dt2283group_m.Payments to aaljabri;
-grant select on dt2283group_m.Ingredients to aaljabri;
-grant select on dt2283group_m.MenuItemOrder to aaljabri;
-grant select on dt2283group_m.ResourcesType to aaljabri;
-grant select on dt2283group_m.ResourceStock to aaljabri;
-grant select on dt2283group_m.SeasonalResources to aaljabri;
-grant select on dt2283group_m.SeasonalStock to aaljabri;
+grant select on dt2283m3.Customer to aaljabri;
+grant select on dt2283m3.Menu to aaljabri;
+grant select on dt2283m3.Brochures to aaljabri;
+grant select on dt2283m3.Event to aaljabri;
+grant select on dt2283m3.Booking to aaljabri;
+grant select on dt2283m3.Payments to aaljabri;
+grant select on dt2283m3.Ingredients to aaljabri;
+grant select on dt2283m3.MenuItemOrder to aaljabri;
+grant select on dt2283m3.ResourcesType to aaljabri;
+grant select on dt2283m3.ResourceStock to aaljabri;
+grant select on dt2283m3.SeasonalResources to aaljabri;
+grant select on dt2283m3.SeasonalStock to aaljabri;
 
 -- grant priveledge access to each member of the group
-grant insert on dt2283group_m.Customer to idobos; -- as manager
-grant update on dt2283group_m.Customer to idobos; -- as manager
-grant delete on dt2283group_m.Customer to idobos; -- as manager
+grant insert on dt2283m13.Customer to idobos; -- as manager
+grant update on dt2283m13.Customer to idobos; -- as manager
+grant delete on dt2283m13.Customer to idobos; -- as manager
 
-grant insert on dt2283group_m.Booking to idobos; -- as manager
-grant update on dt2283group_m.Booking to idobos; -- as manager
-grant delete on dt2283group_m.Booking to idobos; -- as manager
+grant insert on dt2283m13.Booking to idobos; -- as manager
+grant update on dt2283m13.Booking to idobos; -- as manager
+grant delete on dt2283m13.Booking to idobos; -- as manager
 
-grant insert on dt2283group_m.Brochures to falgahtani; -- as designer
-grant update on dt2283group_m.Brochures to falgahtani; -- as desinger
-grant delete on dt2283group_m.Brochures to falgahtani; -- as desinger
+grant insert on dt2283m13.Brochures to falgahtani; -- as designer
+grant update on dt2283m13.Brochures to falgahtani; -- as desinger
+grant delete on dt2283m13.Brochures to falgahtani; -- as desinger
 
-grant insert on dt2283group_m.ResourcesType to aaljabri; -- as caretacker
-grant update on dt2283group_m.ResourcesType to aaljabri; -- as caretacker
-grant delete on dt2283group_m.ResourcesType to aaljabri; -- as caretacker
+grant insert on dt2283m13.ResourcesType to aaljabri; -- as caretacker
+grant update on dt2283m13.ResourcesType to aaljabri; -- as caretacker
+grant delete on dt2283m13.ResourcesType to aaljabri; -- as caretacker
 */
