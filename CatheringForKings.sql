@@ -162,7 +162,7 @@ VALUES(12344 , 'Ellie','Maribel','04 merrllyn road, Dublin 13','0836995008','ell
 INSERT INTO Customer(customerNo,firstName,lastName,Address,PhoneNo,email) 
 VALUES(12345 , 'Therry','McAtamey','122 patrol field, Dublin 24','08912331212','therry_m@mail.com');
 
--- adding data into table
+-- adding data into Menu table
 INSERT INTO Menu (menuNo, menuType, menuDescription, menuCost, menuReciept, menuDuration, menuOrderNo) 
 VALUES(12221 , 'starter', 'Breaded mushrooms', 8.00, 50.00, TIMESTAMP '2018-11-16 00:35:20', 13331);
 
@@ -174,33 +174,15 @@ VALUES(12223 , 'dessert','Apple pie', 12.00, 50.00, TIMESTAMP '2018-11-16 2:10:0
 
 INSERT INTO Menu (menuNo, menuType, menuDescription, menuCost, menuReciept, menuDuration, menuOrderNo) 
 VALUES(12224 , 'drinks','Wine + Water', 10.00, 50.00, TIMESTAMP '2018-11-16 00:00:00' ,13331);
-/*
-INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
-VALUES(5 , 'starter','melon and parma ham','5.00','___','___','___');
 
 INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
-VALUES(5 , 'starter','melon and parma ham','5.00','___','___','___');
+VALUES(12225 , 'extra','Vegetarian Caprese Pasta Salad', 18.00,' 50.00',TIMESTAMP '2018-11-16 45:00:00', 133331);
 
-INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
-VALUES(11 , 'maincourse','fillet of steak and chips','20.00','___','___','___');
-
-INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
-VALUES(16 , 'maincourse','vegtibles','15.00','___','___','___');
-
-INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
-VALUES(51 , 'desserts','pavlova with fruits','7.00','___','___','___');
-
-INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
-VALUES(53 , 'desserts','apple tart and cream','5.00','___','___','___');
-
-INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
-VALUES(54 , 'desserts','banoffi','7.00','___','___','___');
-*/
 
 
  -- adding values into brochures table
  INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
-    VALUES( 10101, 'Menu of the day', 3, 'starter, main course, dessert, drinks', 100, 50.00, 12221); 
+    VALUES( 10101, 'Menu of the day', 3, 'starter, main course, dessert, drinks +', 100, 50.00, 12221); 
  
 -- adding events into the database 
 INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
@@ -209,7 +191,6 @@ INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
 -- adding booking into database
 INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11111, 'central park Dublin 18','company meeting','R', TO_DATE('2018-10-12', 'yyyy-mm-dd'), 1500.00, 11221, 12341);
-/*
 INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11112 , 'miltown dublin 16','Birthday party','S', TO_DATE('2018-11-14', 'yyyy-mm-dd'), 2200.50, 11222, 12342);
 INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
