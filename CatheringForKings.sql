@@ -222,6 +222,18 @@ INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDat
     VALUES(11114 , 'copper dublin 12','Birthday party','P', TO_DATE('2018-11-11', 'yyyy-mm-dd'), 5500.00, 11224, 12344);
 INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11115, 'blancharstown road dublin 15', 'Family reunion + party','P', TO_DATE('2018-11-16', 'yyyy-mm-dd'), 3543.59, 11225, 12345);
+
+-- adding Payments into database
+INSERT INTO Payments (paymentNo ,amountPaid, bookingNo) 
+    VALUES(22221, 90.00,11111);
+INSERT INTO Payments (paymentNo ,amountPaid, bookingNo) 
+    VALUES(22222, 75.30,11112);
+INSERT INTO Payments (paymentNo ,amountPaid, bookingNo) 
+    VALUES(22223, 54.25,11113);
+INSERT INTO Payments (paymentNo ,amountPaid, bookingNo) 
+    VALUES(22224, 28.61,11114);
+INSERT INTO Payments (paymentNo, amountPaid, bookingNo)
+    VALUES(22225, 1200.00, 11115);
  
 
 commit;
