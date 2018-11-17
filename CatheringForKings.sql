@@ -276,6 +276,20 @@ INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resour
     
 INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
     VALUES(71114,'table and chairs','luxury table and chairs',90.00, 11221);
+
+
+ -- adding ResourceStock into database
+INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
+    VALUES(81111,1250, 71111); 
+    
+  INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
+    VALUES(81112,750, 71112);
+    
+  INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
+    VALUES(81113,1000, 71113); 
+    
+  INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
+    VALUES(81114,2250, 71114); 
  
 
 commit;
