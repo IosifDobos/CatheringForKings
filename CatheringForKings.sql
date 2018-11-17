@@ -179,7 +179,6 @@ INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDurat
 VALUES(12225 , 'extra','Vegetarian Caprese Pasta Salad', 18.00,' 50.00',TIMESTAMP '2018-11-16 45:00:00', 133331);
 
 
-
  -- adding values into brochures table
  INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
     VALUES( 10101, 'Menu of the day', 4, 'starter, main course, dessert, drinks +', 100, 50.00, 12221); 
@@ -234,6 +233,23 @@ INSERT INTO Payments (paymentNo ,amountPaid, bookingNo)
     VALUES(22224, 28.61,11114);
 INSERT INTO Payments (paymentNo, amountPaid, bookingNo)
     VALUES(22225, 1200.00, 11115);
+
+-- adding MenuItemOrder into database
+INSERT INTO MenuItemOrder (menuOrderNO ,numberOfPerson, menuOrderCost,menuNo,bookingNo) 
+    VALUES(61111,122,50.00,12221,11111);
+
+INSERT INTO MenuItemOrder (menuOrderNO ,numberOfPerson, menuOrderCost,menuNo,bookingNo) 
+    VALUES(61112,150,80.00,12222,11112);
+
+INSERT INTO MenuItemOrder (menuOrderNO ,numberOfPerson, menuOrderCost,menuNo,bookingNo) 
+    VALUES(61113,265,90.00,12223,11113);
+
+INSERT INTO MenuItemOrder (menuOrderNO ,numberOfPerson, menuOrderCost,menuNo,bookingNo) 
+    VALUES(61114,300,56.00,12224,11114);
+
+INSERT INTO MenuItemOrder (menuOrderNO ,numberOfPerson, menuOrderCost,menuNo,bookingNo) 
+    VALUES(61115,300,56.00,12224,11115);
+
 
 -- adding Ingredients into database
 INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
