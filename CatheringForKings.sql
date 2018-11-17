@@ -234,6 +234,18 @@ INSERT INTO Payments (paymentNo ,amountPaid, bookingNo)
     VALUES(22224, 28.61,11114);
 INSERT INTO Payments (paymentNo, amountPaid, bookingNo)
     VALUES(22225, 1200.00, 11115);
+
+-- adding Ingredients into database
+INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
+    VALUES(51111, 'bread, mushrooms, oil, salt, tomatoes, carrots, red pepper',12221);
+INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
+    VALUES(51112, 'pistachio, chicken, pomegranate juice, vinegar, ginger, black pepper ',12222);
+INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
+    VALUES(51113, 'apple, sugar, flours, cinnamon, salt, nutmeg, lemon juice',12223);
+INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
+    VALUES(51114, 'more to mome',12224);
+INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
+    VALUES(51115, 'more to come',12225);
  
 
 commit;
