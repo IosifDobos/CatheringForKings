@@ -148,19 +148,19 @@ CREATE TABLE SeasonalStock(
 
 
 INSERT INTO Customer (customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12341 , 'john','smith','24 clontarf Blvd, Dublin 3','0854553322','Jsmith@mail.com');
+VALUES(12341 , 'john','smith','24 clontarf Blvd, Dublin 3','0854553322','Jsmith@gmail.com');
 
 INSERT INTO Customer( customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12342 , 'SARA','ALLON','18 grand canal, Dublin 2','0874536329','SALLON@mail.com');
+VALUES(12342 , 'SARA','ALLON','18 grand canal, Dublin 2','0874536329','SALLON@gmail.com');
 
 INSERT INTO Customer(customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12343 , 'marry','gordan','02 sandyford, Dublib 18','0836995258','Mgordan@mail.com');
+VALUES(12343 , 'marry','gordan','02 sandyford, Dublib 18','0836995258','Mgordan@gmail.com');
 
 INSERT INTO Customer(customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12344 , 'Ellie','Maribel','04 merrllyn road, Dublin 13','0836995008','elliem12@mail.com');
+VALUES(12344 , 'Ellie','Maribel','04 merrllyn road, Dublin 13','0836995008','elliem12@gmail.com');
 
 INSERT INTO Customer(customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12345 , 'Therry','McAtamey','122 patrol field, Dublin 24','08912331212','therry_m@mail.com');
+VALUES(12345 , 'Therry','McAtamey','122 patrol field, Dublin 24','08912331212','therry_m@gmail.com');
 
 -- adding data into Menu table
 INSERT INTO Menu (menuNo, menuType, menuDescription, menuCost, menuReciept, menuDuration, menuOrderNo) 
@@ -182,7 +182,16 @@ VALUES(12225 , 'extra','Vegetarian Caprese Pasta Salad', 18.00,' 50.00',TIMESTAM
 
  -- adding values into brochures table
  INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
-    VALUES( 10101, 'Menu of the day', 3, 'starter, main course, dessert, drinks +', 100, 50.00, 12221); 
+    VALUES( 10101, 'Menu of the day', 4, 'starter, main course, dessert, drinks +', 100, 50.00, 12221); 
+
+INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
+    VALUES( 10102, 'The special menu', 4, 'starter, main course, dessert, drinks', 200, 80.00, 12222); 
+    
+INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
+    VALUES( 10103, 'The kings menu', 4, 'starter, main course, dessert, drinks', 150, 90.00, 12223); 
+    
+INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
+    VALUES( 10104, 'The vip menu', 4, 'starter, main course, dessert, drinks', 180, 70.00, 12224);
  
 -- adding events into the database 
 INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
