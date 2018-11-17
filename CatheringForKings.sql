@@ -192,10 +192,24 @@ INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfP
     
 INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
     VALUES( 10104, 'The vip menu', 4, 'starter, main course, dessert, drinks', 180, 70.00, 12224);
+
  
 -- adding events into the database 
 INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
-    VALUES( 11221, 'company meeting', 'central park dublin 18', TO_DATE('2018-11-14', 'yyyy-mm-dd'), 10101);
+    VALUES( 11221, 'Company meeting', 'central park dublin 18', TO_DATE('2018-11-14', 'yyyy-mm-dd'), 10101);
+
+INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
+    VALUES( 11222, 'Birthday party', 'miltown dublin 16', TO_DATE('2018-10-11', 'yyyy-mm-dd'), 10102);
+    
+INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
+    VALUES( 11223, 'Christmas party', 'astle court, Dublin 3', TO_DATE('2018-08-11', 'yyyy-mm-dd'), 10103);
+
+INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
+    VALUES( 11224, 'Birthday party', 'copper dublin 12', TO_DATE('2018-10-11', 'yyyy-mm-dd'), 10104);
+
+INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
+    VALUES( 11225, 'Family reunion', 'blancharstown road dublin 15', TO_DATE('2018-11-16', 'yyyy-mm-dd'), 10104);
+
 
 -- adding booking into database
 INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
@@ -205,10 +219,10 @@ INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDat
 INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11113 , 'castle court, Dublin 3','Christmas party','S', TO_DATE('2018-11-01', 'yyyy-mm-dd'), 1250.50, 11223, 12343);
 INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
-    VALUES(11114 , 'talaght road dublin 16','Special meeting','P', TO_DATE('2018-11-11', 'yyyy-mm-dd'), 5500.00, 11224, 12344);
+    VALUES(11114 , 'copper dublin 12','Birthday party','P', TO_DATE('2018-11-11', 'yyyy-mm-dd'), 5500.00, 11224, 12344);
 INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
-    VALUES(11115, 'blancharstown road dublin 15', 'Ocasional meeting + party','P', TO_DATE('2018-11-11', 'yyyy-mm-dd'), 3543.59, 11225, 12345);
-*/   
+    VALUES(11115, 'blancharstown road dublin 15', 'Family reunion + party','P', TO_DATE('2018-11-16', 'yyyy-mm-dd'), 3543.59, 11225, 12345);
+ 
 
 commit;
 /*
