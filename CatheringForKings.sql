@@ -1,3 +1,4 @@
+-- droping tables
 DROP TABLE SeasonalStock;
 DROP TABLE SeasonalResources;
 DROP TABLE ResourceStock;  
@@ -11,6 +12,7 @@ DROP TABLE Brochures;
 DROP TABLE Menu;
 DROP TABLE Customer;
 
+-- creating tables
 CREATE TABLE Customer(
     customerNo NUMBER(5),
     firstName VARCHAR2(50) not null,
@@ -25,12 +27,12 @@ CREATE TABLE Customer(
 
 CREATE TABLE Menu(
     menuNo NUMBER(5) NOT NULL,
-    menuType VARCHAR(50) not null,
-    menuDescription VARCHAR(50) not null,
-    menuCost NUMBER(5,2) not null,
-    menuReciept NUMBER(5,2) not null,
-    menuDuration TIMESTAMP not null,
-    menuOrderNo NUMBER(5) not null,
+    menuType VARCHAR(50) NOT NULL,
+    menuDescription VARCHAR(50) NOT NULL,
+    menuCost NUMBER(5,2) NOT NULL,
+    menuReciept NUMBER(5,2) NOT NULL,
+    menuDuration TIMESTAMP NOT NULL,
+    menuOrderNo NUMBER(5) NOT NULL,
     
     PRIMARY KEY (menuNo)
 );
@@ -62,10 +64,10 @@ CREATE TABLE Event(
 CREATE TABLE Booking(
     bookingNo NUMBER(5),
     location VARCHAR2(255) NOT NULL,
-    bookingInfo VARCHAR2(255) NOT NULL,
-    bookingstatus VARCHAR2(1) NOT NULL ,
+    bookingInformation VARCHAR2(255) NOT NULL,
+    bookingStatus VARCHAR2(1) NOT NULL ,
     bookingDate DATE NOT NULL,
-    bookingcost Number(8,2) NOT NULL,
+    bookingCost Number(8,2) NOT NULL,
     eventID NUMBER(5) NOT NULL,
     customerNo NUMBER(5) NOT NULL,
     
@@ -146,7 +148,7 @@ CREATE TABLE SeasonalStock(
 
 );
 
-
+-- Inserting data into tables
 INSERT INTO Customer (customerNo,firstName,lastName,Address,PhoneNo,email) 
 VALUES(12341 , 'john','smith','24 clontarf Blvd, Dublin 3','0854553322','Jsmith@gmail.com');
 
@@ -211,15 +213,15 @@ INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
 
 
 -- adding booking into database
-INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
+INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11111, 'central park Dublin 18','company meeting','R', TO_DATE('2018-10-12', 'yyyy-mm-dd'), 1500.00, 11221, 12341);
-INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
+INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11112 , 'miltown dublin 16','Birthday party','S', TO_DATE('2018-11-14', 'yyyy-mm-dd'), 2200.50, 11222, 12342);
-INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
+INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11113 , 'castle court, Dublin 3','Christmas party','S', TO_DATE('2018-11-01', 'yyyy-mm-dd'), 1250.50, 11223, 12343);
-INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
+INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11114 , 'copper dublin 12','Birthday party','P', TO_DATE('2018-11-11', 'yyyy-mm-dd'), 5500.00, 11224, 12344);
-INSERT INTO Booking (bookingNo ,location, bookingInfo, bookingstatus, bookingDate, bookingCost, eventID, customerNo) 
+INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11115, 'blancharstown road dublin 15', 'Family reunion + party','P', TO_DATE('2018-11-16', 'yyyy-mm-dd'), 3543.59, 11225, 12345);
 
 -- adding Payments into database
@@ -376,6 +378,8 @@ grant select on dt2283m3.SeasonalResources to aaljabri;
 grant select on dt2283m3.SeasonalStock to aaljabri;
 
 -- grant priveledge access to each member of the group
+grant create to idobos;
+
 grant insert on dt2283m13.Customer to idobos; -- as manager
 grant update on dt2283m13.Customer to idobos; -- as manager
 grant delete on dt2283m13.Customer to idobos; -- as manager
