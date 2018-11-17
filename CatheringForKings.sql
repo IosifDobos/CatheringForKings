@@ -262,6 +262,20 @@ INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo)
     VALUES(51114, 'more to mome',12224);
 INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
     VALUES(51115, 'more to come',12225);
+
+
+-- adding ResourcesType into database
+INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
+    VALUES(71111,'glasses','cristal wine glasses',4.20, 11221); 
+ 
+ INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
+    VALUES(71112,'delph','delph resturant',80.60, 11222); 
+    
+INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
+    VALUES(71113,'table cloths','soft white coloured cloths',20.00, 11221); 
+    
+INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
+    VALUES(71114,'table and chairs','luxury table and chairs',90.00, 11221);
  
 
 commit;
