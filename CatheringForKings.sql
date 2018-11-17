@@ -290,6 +290,35 @@ INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID)
     
   INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
     VALUES(81114,2250, 71114); 
+
+
+--adding SeasonalResources into database
+ INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost,resourceID) 
+    VALUES(91111,'garden heaters',52.10, 81111); 
+
+INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost,resourceID) 
+    VALUES(91112,'Halloween lights',60.50, 81112); 
+
+INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost,resourceID) 
+    VALUES(91113,'chrismas lights',20.10, 81113); 
+
+INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost,resourceID) 
+    VALUES(91114,'Fans',15.00, 81114); 
+
+
+
+--adding SeasonalStock into database
+INSERT INTO SeasonalStock ( seasonalStockID ,stockQuantity, seasonalResourcesNO) 
+    VALUES(10111,2000,91111); 
+
+INSERT INTO SeasonalStock ( seasonalStockID ,stockQuantity, seasonalResourcesNO) 
+    VALUES(10112,1000,91112); 
+    
+INSERT INTO SeasonalStock ( seasonalStockID ,stockQuantity, seasonalResourcesNO) 
+    VALUES(10113,5000,91113); 
+    
+INSERT INTO SeasonalStock ( seasonalStockID ,stockQuantity, seasonalResourcesNO) 
+    VALUES(10114,2000,91114); 
  
 
 commit;
