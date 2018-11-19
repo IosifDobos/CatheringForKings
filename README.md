@@ -19,3 +19,8 @@ For this assignment we had to create a database for Catering for Kings. Reading 
 ### ERD Diagram for Cathering for Kings
 
 <img width="1090" alt="erd_diagram" src="https://user-images.githubusercontent.com/22156333/48663237-19d8f900-ea85-11e8-9ad4-9cdd59c48486.png">
+
+### PL/SQL Customer Transaction
+
+Creating a PL/SQL transaction which will accept information from the user and manipulate the data in the database, and until the maximum number of customer is reached.
+For the PL/SQL transaction I decided to use customer table, for adding more customers into the database.  I decided to add a limit no more than ten customers into the database, to check out the condition statement for the customer transcation table. Bellow I have attached my transaction code for customer table. [PL/SQL Transaction file](https://github.com/IosifDobos/CatheringForKings/blob/master/transaction.sql)
