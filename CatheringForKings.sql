@@ -109,23 +109,23 @@ CREATE TABLE MenuItemOrder(
 );
 
 CREATE TABLE ResourcesType(
-    resourceID NUMBER(5) NOT NULL ,
-    resourcestype VARCHAR2(10) NOT NULL ,
-    resourcedescription VARCHAR2(255) NOT NULL ,
-    resourceCost NUMBER(5,2) NOT NULL ,
-    eventID NUMBER(5) NOT NULL ,
+    resourceID NUMBER(5) NOT NULL,
+    resourceType VARCHAR2(255) NOT NULL,
+    resourceDescription VARCHAR2(255) NOT NULL,
+    resourceCost NUMBER(5,2) NOT NULL,
+    eventID NUMBER(5) NOT NULL,
     
     CONSTRAINT resourceID_PK PRIMARY KEY (resourceID),
-    CONSTRAINT Resourcestype_Event_fk FOREIGN KEY (eventID) REFERENCES Event(eventID)
+    CONSTRAINT Resourcestype_Event_FK FOREIGN KEY (eventID) REFERENCES Event(eventID)
 );
 
 CREATE TABLE ResourceStock(
     resourceStockID NUMBER(5) NOT NULL,
-    resourceStockQty VARCHAR2(5) NOT NULL,
+    resourceStockQty NUMBER(5) NOT NULL,
     resourceID NUMBER(5) NOT NULL,
     
     CONSTRAINT ResourceStockID_PK PRIMARY KEY (resourceStockID),
-    CONSTRAINT ResourceStock_Resourcestype_fk FOREIGN KEY (resourceID) REFERENCES ResourcesType(resourceID)
+    CONSTRAINT ResourceStock_ResourcesType_FK FOREIGN KEY (resourceID) REFERENCES ResourcesType(resourceID)
 );
 
 CREATE TABLE SeasonalResources(
@@ -150,35 +150,38 @@ CREATE TABLE SeasonalStock(
 
 -- Inserting data into tables
 INSERT INTO Customer (customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12341 , 'john','smith','24 clontarf Blvd, Dublin 3','0854553322','Jsmith@gmail.com');
+    VALUES(12341 , 'john','smith','24 clontarf Blvd, Dublin 3','0854553322','Jsmith@gmail.com');
 
 INSERT INTO Customer( customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12342 , 'SARA','ALLON','18 grand canal, Dublin 2','0874536329','SALLON@gmail.com');
+    VALUES(12342 , 'SARA','ALLON','18 grand canal, Dublin 2','0874536329','SALLON@gmail.com');
 
 INSERT INTO Customer(customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12343 , 'marry','gordan','02 sandyford, Dublib 18','0836995258','Mgordan@gmail.com');
+    VALUES(12343 , 'marry','gordan','02 sandyford, Dublib 18','0836995258','Mgordan@gmail.com');
 
 INSERT INTO Customer(customerNo,firstName,lastName,Address,PhoneNo,email) 
 VALUES(12344 , 'Ellie','Maribel','04 merrllyn road, Dublin 13','0836995008','elliem12@gmail.com');
 
 INSERT INTO Customer(customerNo,firstName,lastName,Address,PhoneNo,email) 
-VALUES(12345 , 'Therry','McAtamey','122 patrol field, Dublin 24','08912331212','therry_m@gmail.com');
+    VALUES(12345 , 'Therry','McAtamey','122 patrol field, Dublin 24','08912331212','therry_m@gmail.com');
 
 -- adding data into Menu table
 INSERT INTO Menu (menuNo, menuType, menuDescription, menuCost, menuReciept, menuDuration, menuOrderNo) 
-VALUES(12221 , 'starter', 'Breaded mushrooms', 8.00, 50.00, TIMESTAMP '2018-11-16 00:35:20', 13331);
+    VALUES(12221 , 'starter', 'Breaded mushrooms', 8.00, 50.00, TIMESTAMP '2018-11-16 00:35:20', 13331);
 
 INSERT INTO Menu (menuNo, menuType, menuDescription, menuCost, menuReciept, menuDuration, menuOrderNo) 
-VALUES(12222 , 'main course','Pistachio chicken with pomegranate sauce', 20.00, 50.00, TIMESTAMP '2018-11-16 1:55:39',13331);
+    VALUES(12222 , 'main course','Pistachio chicken with pomegranate sauce', 20.00, 50.00, TIMESTAMP '2018-11-16 1:55:39',13331);
 
 INSERT INTO Menu (menuNo, menuType, menuDescription, menuCost, menuReciept, menuDuration, menuOrderNo) 
-VALUES(12223 , 'dessert','Apple pie', 12.00, 50.00, TIMESTAMP '2018-11-16 2:10:00' ,13331);
+    VALUES(12223 , 'dessert','Apple pie', 12.00, 50.00, TIMESTAMP '2018-11-16 2:10:00' ,13331);
 
 INSERT INTO Menu (menuNo, menuType, menuDescription, menuCost, menuReciept, menuDuration, menuOrderNo) 
-VALUES(12224 , 'drinks','Wine + Water', 10.00, 50.00, TIMESTAMP '2018-11-16 00:00:00' ,13331);
+    VALUES(12224 , 'drinks','Wine + Water', 10.00, 50.00, TIMESTAMP '2018-11-16 00:00:00' ,13331);
 
 INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
-VALUES(12225 , 'extra','Vegetarian Caprese Pasta Salad', 18.00,' 50.00',TIMESTAMP '2018-11-16 45:00:00', 133331);
+    VALUES(12225 , 'extra','Vegetarian Caprese Pasta Salad', 18.00, 50.00,TIMESTAMP '2018-11-16 01:15:00', 13332);
+
+INSERT INTO Menu (menuNo,menuType,menuDescription,menuCost,menuReciept,menuDuration,menuOrderNo) 
+    VALUES(12226 , 'all inclusive','All you can eat ', 25.00, 50.00,TIMESTAMP '2018-10-30 02:30:00', 13332);
 
 
  -- adding values into brochures table
@@ -194,6 +197,8 @@ INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfP
 INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
     VALUES( 10104, 'The vip menu', 4, 'starter, main course, dessert, drinks', 180, 70.00, 12224);
 
+INSERT INTO Brochures( brochuresNo, menuName, menuItemNo, menuDescription, noOfPerson, pricePerPerson, menuNo)
+    VALUES( 10105, 'The scarry menu', 4, 'starter, main course, dessert, drinks', 50, 450.00, 12224);
  
 -- adding events into the database 
 INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
@@ -211,16 +216,22 @@ INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
 INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
     VALUES( 11225, 'Family reunion', 'blancharstown road dublin 15', TO_DATE('2018-11-16', 'yyyy-mm-dd'), 10104);
 
+INSERT INTO Event( eventID, eventName, eventLocation, eventDate, brochuresNo)
+    VALUES( 11226, 'Halloween party + extra', 'dublin city center, Dublin 1', TO_DATE('2018-10-31', 'yyyy-mm-dd'), 10105);
 
 -- adding booking into database
 INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11111, 'central park Dublin 18','company meeting','R', TO_DATE('2018-10-12', 'yyyy-mm-dd'), 1500.00, 11221, 12341);
+
 INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11112 , 'miltown dublin 16','Birthday party','S', TO_DATE('2018-11-14', 'yyyy-mm-dd'), 2200.50, 11222, 12342);
+
 INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11113 , 'castle court, Dublin 3','Christmas party','S', TO_DATE('2018-11-01', 'yyyy-mm-dd'), 1250.50, 11223, 12343);
+
 INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11114 , 'copper dublin 12','Birthday party','P', TO_DATE('2018-11-11', 'yyyy-mm-dd'), 5500.00, 11224, 12344);
+
 INSERT INTO Booking (bookingNo ,location, bookingInformation, bookingStatus, bookingDate, bookingCost, eventID, customerNo) 
     VALUES(11115, 'blancharstown road dublin 15', 'Family reunion + party','P', TO_DATE('2018-11-16', 'yyyy-mm-dd'), 3543.59, 11225, 12345);
 
@@ -255,7 +266,7 @@ INSERT INTO MenuItemOrder (menuOrderNO ,numberOfPerson, menuOrderCost,menuNo,boo
 
 -- adding Ingredients into database
 INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
-    VALUES(51111, 'bread, mushrooms, oil, salt, tomatoes, carrots, red pepper',12221);
+    VALUES(51111, 'bread, mushrooms, oil, salt, tomatoes, carrots, red pepper', 12221);
 INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
     VALUES(51112, 'pistachio, chicken, pomegranate juice, vinegar, ginger, black pepper ',12222);
 INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
@@ -263,49 +274,49 @@ INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo)
 INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
     VALUES(51114, 'more to mome',12224);
 INSERT INTO Ingredients (ingredientsID ,detailsIngredients, menuNo) 
-    VALUES(51115, 'more to come',12225);
+    VALUES(51115, 'more to come',12224);
 
 
 -- adding ResourcesType into database
-INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
-    VALUES(71111,'glasses','cristal wine glasses',4.20, 11221); 
+INSERT INTO ResourcesType (resourceID ,resourceType, resourceDescription,resourceCost,eventID) 
+    VALUES(71111,'glasses','cristal wine glasses', 4.20, 11221); 
  
- INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
-    VALUES(71112,'delph','delph resturant',80.60, 11222); 
+INSERT INTO ResourcesType (resourceID ,resourceType, resourceDescription,resourceCost,eventID) 
+    VALUES(71112, 'delph', 'delph resturant', 80.60, 11222); 
     
-INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
-    VALUES(71113,'table cloths','soft white coloured cloths',20.00, 11221); 
+INSERT INTO ResourcesType (resourceID ,resourceType, resourceDescription,resourceCost,eventID) 
+    VALUES(71113,'table cloths','soft white coloured cloths', 20.00, 11221); 
     
-INSERT INTO ResourcesType (resourceID ,resourcestype, resourcedescription,resourceCost,eventID) 
-    VALUES(71114,'table and chairs','luxury table and chairs',90.00, 11221);
+INSERT INTO ResourcesType (resourceID ,resourceType, resourceDescription,resourceCost,eventID) 
+    VALUES(71114, 'table and chairs', 'luxury table and chairs', 90.00, 11221);
 
 
  -- adding ResourceStock into database
 INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
-    VALUES(81111,1250, 71111); 
+    VALUES(81111, 1250, 71111); 
     
-  INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
+INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
     VALUES(81112,750, 71112);
     
-  INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
+INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
     VALUES(81113,1000, 71113); 
     
-  INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
-    VALUES(81114,2250, 71114); 
+INSERT INTO ResourceStock ( resourceStockID ,resourceStockQty, resourceID) 
+    VALUES(81114, 2000, 71114); 
 
 
 --adding SeasonalResources into database
- INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost,resourceID) 
-    VALUES(91111,'garden heaters',52.10, 81111); 
+ INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost, resourceID) 
+    VALUES(91111,'garden heaters',52.10, 71111); 
 
-INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost,resourceID) 
-    VALUES(91112,'Halloween lights',60.50, 81112); 
+INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost, resourceID) 
+    VALUES(91112,'Halloween lights',60.50, 71112); 
 
-INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost,resourceID) 
-    VALUES(91113,'chrismas lights',20.10, 81113); 
+INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost, resourceID) 
+    VALUES(91113,'chrismas lights',20.10, 71113); 
 
-INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost,resourceID) 
-    VALUES(91114,'Fans',15.00, 81114); 
+INSERT INTO SeasonalResources ( seasonalResourcesNO ,seasonalDescription, seasonalCost, resourceID) 
+    VALUES(91114,'Fans',15.00, 71114); 
 
 
 
@@ -321,8 +332,6 @@ INSERT INTO SeasonalStock ( seasonalStockID ,stockQuantity, seasonalResourcesNO)
     
 INSERT INTO SeasonalStock ( seasonalStockID ,stockQuantity, seasonalResourcesNO) 
     VALUES(10114,2000,91114); 
- 
-
 commit;
 
 grant select on dt2283m13.Customer to idobos;
