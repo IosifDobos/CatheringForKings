@@ -24,3 +24,8 @@ For this assignment we had to create a database for Catering for Kings. Reading 
 
 Creating a PL/SQL transaction which will accept information from the user and manipulate the data in the database, and until the maximum number of customer is reached.
 For the PL/SQL transaction I decided to use customer table, for adding more customers into the database.  I decided to add a limit no more than ten customers into the database, to check out the condition statement for the customer transcation table. Bellow I have attached my transaction code for customer table. [PL/SQL Transaction file](https://github.com/IosifDobos/CatheringForKings/blob/master/transaction.sql)
+
+### Creating SQL Queries
+
+Creating a sql file query which involves the following: Selection, Projection, Aggregation with filters on aggregates, Union, Minus, Difference, Inner Join, Outer Join, Semi-join, Anti-join and Correlated sub-query.
+Each query has been tested to ensure that there is data there to satisfy it and to show that it works – i.e. a query that shows the power of the technique being used. [SQL queries file](https://github.com/IosifDobos/CatheringForKings/blob/master/queries.sql)
